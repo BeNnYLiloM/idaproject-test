@@ -93,15 +93,15 @@ export const mutations = {
 }
 
 export const actions = {
-  async [actionTypes.loadProducts](context) {
-    context.commit(mutationTypes.loadProductsStart)
+  async nuxtServerInit({ commit }, { req }) {
+    commit(mutationTypes.loadProductsStart)
 
     try {
       const data = await getVehicles()
 
-      context.commit(mutationTypes.loadProductsSuccess, data)
+      commit(mutationTypes.loadProductsSuccess, data)
     } catch {
-      context.commit(mutationTypes.loadProductsFailure)
+      commit(mutationTypes.loadProductsFailure)
     }
   },
   [actionTypes.selectProduct](context, data) {
