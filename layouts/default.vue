@@ -14,7 +14,7 @@
 
 <script>
 import Header from '@/components/Header'
-import { actionTypes, getterTypes } from '@/store'
+import { getterTypes } from '@/store'
 import { mapGetters } from 'vuex'
 
 export default {
@@ -27,11 +27,6 @@ export default {
       isOpenForm: getterTypes.getIsOpenAddProductForm,
       theme: getterTypes.getThemeName,
     }),
-  },
-  created() {
-    if (!this.$store.getters[getterTypes.getProducts].length) {
-      this.$store.dispatch(actionTypes.loadProducts)
-    }
   },
 }
 </script>

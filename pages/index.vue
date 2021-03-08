@@ -65,7 +65,7 @@ export default {
   },
   computed: {
     ...mapGetters({
-      cardItems: getterTypes.getProducts,
+      products: getterTypes.getProducts,
       error: getterTypes.getErrors,
       isLoading: getterTypes.getIsLoading,
       isOpenAddProductForm: getterTypes.getIsOpenAddProductForm,
@@ -73,16 +73,16 @@ export default {
     selectItems() {
       const items = new Set()
 
-      this.cardItems.map((el) => items.add(el.type))
+      this.products.map((el) => items.add(el.type))
 
       return items
     },
     productsFilteredBy() {
       if (this.filterBy === 'whatever') {
-        return this.cardItems
+        return this.products
       }
 
-      return this.cardItems.filter((el) => el.type === this.filterBy)
+      return this.products.filter((el) => el.type === this.filterBy)
     },
   },
   methods: {
