@@ -93,7 +93,7 @@ export const mutations = {
 }
 
 export const actions = {
-  async nuxtServerInit({ commit }, { req }) {
+  async nuxtServerInit({ commit }) {
     commit(mutationTypes.loadProductsStart)
 
     try {

@@ -72,7 +72,7 @@
 </template>
 
 <script>
-import { getterTypes, actionTypes } from '@/store'
+import { getterTypes } from '@/store'
 import { mapGetters } from 'vuex'
 import ErrorMessage from '@/components/ErrorMessage'
 
@@ -94,14 +94,12 @@ export default {
     }),
   },
   created() {
-    if (!this.$store.getters[getterTypes.getProducts].length) {
-      this.$store.dispatch(actionTypes.loadProducts).then(() => {
-        const product = this.$store.getters[getterTypes.getProductByIndex](
-          this.productId
-        )
+    if (!this.product) {
+      const product = this.$store.getters[getterTypes.getProductByIndex](
+        this.productId
+      )
 
-        this.$store.dispatch('selectProduct', product)
-      })
+      this.$store.dispatch('selectProduct', product)
     }
   },
 }
