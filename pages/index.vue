@@ -2,7 +2,7 @@
   <div class="page-block main-content theme-background-2 animate">
     <Loader v-if="isLoading" />
 
-    <div v-else-if="!error">
+    <div v-else-if="!error" class="w-100">
       <div class="top-line">
         <h1 class="animate theme-text-color">
           Rent

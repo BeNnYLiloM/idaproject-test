@@ -103,6 +103,10 @@ button {
   margin: 0 auto;
 }
 
+.w-100 {
+  width: 100%;
+}
+
 .flex {
   display: flex;
 }
