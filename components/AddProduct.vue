@@ -248,6 +248,12 @@ export default {
   width: 48px;
   height: 48px;
 }
+.light .close:hover {
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
+}
+.dark .close:hover {
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.4);
+}
 
 @media (max-width: 992px) {
   .add-product {
